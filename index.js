@@ -9,6 +9,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.start((ctx) =>  {
     ctx.reply(`👋 Привет, ${ctx.message.from.first_name}!\n\n🤖 Нажимай на кнопку и я помогу тебе сгенерировать рандомный фильм/сериал/тв программу!\n\n💬  /help - команда поможет тебе разобраться как работать с ботом`, Markup.keyboard([['Поиск фильма'], ['Поиск сериала/программы'], ['Помощь']]).resize().extra())
+    console.log(`User id: ${ctx.message.from.id}\n\n User name: ${ctx.message.from.username}`)
 })
 
 bot.help((ctx) => {
